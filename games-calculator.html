@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pak E Store – Mobile Optimized Game Selector</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #fff;
+  padding: 15px;
+  margin: 0;
+}
+h1{
+  color: #38bdf8;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.summary{
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+}
+select{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+.total{
+  margin-top: 8px;
+  font-size: 16px;
+}
+.green{color:#22c55e}
+.red{color:#ef4444}
+button{
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover{background:#22c55e;}
+.games{
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+label{
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>🎮 Pak E Store – Select Games & HDD</h1>
+
+<div class="container">
+
+<div class="summary">
+<h3>Select Hard Disk</h3>
+<select id="disk">
+<option value="145" data-name="160GB">160 GB (145GB Free)</option>
+<option value="290" data-name="320GB">320 GB (290GB Free)</option>
+<option value="450" data-name="500GB">500 GB (450GB Free)</option>
+<option value="930" data-name="1TB">1 TB (930GB Free)</option>
+<option value="1850" data-name="2TB">2 TB (1850GB Free)</option>
+</select>
+
+<div class="total">Selected Games Size: <span id="used" class="green">0</span> GB</div>
+<div class="total">Remaining Space: <span id="left" class="green">0</span> GB</div>
+
+<button id="confirm">✅ Confirm & Send on WhatsApp</button>
+</div>
+
+<div class="games">
+<h3>Select Games</h3>
+
+<!-- Full games list -->
+<label><input type="checkbox" value="35"> The Crew 2 (35GB)</label>
+<label><input type="checkbox" value="160"> Forza Motorsport (160GB)</label>
+<label><input type="checkbox" value="180"> Forza Horizon 5 (180GB)</label>
+<label><input type="checkbox" value="15"> Far Cry 3 (15GB)</label>
+<label><input type="checkbox" value="125"> Spider-Man 2 (125GB)</label>
+<label><input type="checkbox" value="60"> Spider-Man Miles Morales (60GB)</label>
+<label><input type="checkbox" value="80"> Spider-Man Remastered (80GB)</label>
+<label><input type="checkbox" value="15"> Batman Arkham Asylum (15GB)</label>
+<label><input type="checkbox" value="20"> Batman Arkham City (20GB)</label>
+<label><input type="checkbox" value="75"> Batman Arkham Knight (75GB)</label>
+<label><input type="checkbox" value="80"> Dead Island 2 (80GB)</label>
+<label><input type="checkbox" value="80"> Just Cause 4 (80GB)</label>
+<label><input type="checkbox" value="60"> COD Black Ops 6 (60GB)</label>
+<label><input type="checkbox" value="230"> COD Black Ops Cold War (230GB)</label>
+<label><input type="checkbox" value="20"> COD Modern Warfare 2 (20GB)</label>
+<label><input type="checkbox" value="35"> Max Payne 3 (35GB)</label>
+<label><input type="checkbox" value="165"> Mortal Kombat 11 (165GB)</label>
+<label><input type="checkbox" value="130"> Tekken 8 (130GB)</label>
+<label><input type="checkbox" value="130"> GTA 5 Fully Modded (130GB)</label>
+<label><input type="checkbox" value="30"> GTA IV (30GB)</label>
+<label><input type="checkbox" value="120"> Red Dead Redemption 2 (120GB)</label>
+<label><input type="checkbox" value="70"> Gears of War Reloaded (70GB)</label>
+<label><input type="checkbox" value="20"> Aliens Fireteam Elite (20GB)</label>
+<label><input type="checkbox" value="120"> The Last of Us Part II (120GB)</label>
+<label><input type="checkbox" value="30"> Rise of the Tomb Raider (30GB)</label>
+<label><input type="checkbox" value="40"> Mafia (40GB)</label>
+<label><input type="checkbox" value="15"> Mafia II (15GB)</label>
+<label><input type="checkbox" value="60"> Mafia III (60GB)</label>
+<label><input type="checkbox" value="45"> Devil May Cry 5 (45GB)</label>
+<label><input type="checkbox" value="60"> Battlefield V (60GB)</label>
+<label><input type="checkbox" value="80"> Days Gone (80GB)</label>
+<label><input type="checkbox" value="80"> Horizon Zero Dawn (80GB)</label>
+<label><input type="checkbox" value="35"> Need for Speed Heat (35GB)</label>
+<label><input type="checkbox" value="50"> Farming Simulator 25 (50GB)</label>
+<label><input type="checkbox" value="160"> Cyberpunk 2077 (160GB)</label>
+<label><input type="checkbox" value="75"> Elden Ring (75GB)</label>
+<label><input type="checkbox" value="40"> God of War (40GB)</label>
+<label><input type="checkbox" value="120"> God of War Ragnarök (120GB)</label>
+<label><input type="checkbox" value="10"> Assassin’s Creed (10GB)</label>
+<label><input type="checkbox" value="10"> Assassin’s Creed II (10GB)</label>
+<label><input type="checkbox" value="10"> Assassin’s Creed Brotherhood (10GB)</label>
+<label><input type="checkbox" value="12"> Assassin’s Creed Revelations (12GB)</label>
+<label><input type="checkbox" value="60"> Assassin’s Creed Syndicate (60GB)</label>
+<label><input type="checkbox" value="20"> Resident Evil (20GB)</label>
+<label><input type="checkbox" value="30"> Resident Evil 2 (30GB)</label>
+<label><input type="checkbox" value="30"> Resident Evil 3 (30GB)</label>
+<label><input type="checkbox" value="80"> Resident Evil 4 Remake (80GB)</label>
+<label><input type="checkbox" value="15"> Resident Evil 5 (15GB)</label>
+<label><input type="checkbox" value="20"> Resident Evil 6 (20GB)</label>
+<label><input type="checkbox" value="70"> Resident Evil 7 Biohazard (70GB)</label>
+<label><input type="checkbox" value="45"> Resident Evil Village (45GB)</label>
+<label><input type="checkbox" value="80"> Hogwarts Legacy (80GB)</label>
+<label><input type="checkbox" value="130"> Starfield (130GB)</label>
+<label><input type="checkbox" value="30"> Watch Dogs (30GB)</label>
+<label><input type="checkbox" value="40"> Watch Dogs 2 (40GB)</label>
+<label><input type="checkbox" value="120"> Watch Dogs Legion (120GB)</label>
+<label><input type="checkbox" value="120"> Metro Exodus (120GB)</label>
+<label><input type="checkbox" value="30"> Control Ultimate Edition (30GB)</label>
+<label><input type="checkbox" value="20"> Sekiro Shadows Die Twice (20GB)</label>
+<label><input type="checkbox" value="35"> Dying Light (35GB)</label>
+<label><input type="checkbox" value="65"> Dying Light 2 Stay Human (65GB)</label>
+<label><input type="checkbox" value="75"> Dying Light The Beast (75GB)</label>
+
+</div>
+</div>
+
+<script>
+const cbs=document.querySelectorAll("input[type=checkbox]");
+const used=document.getElementById("used");
+const left=document.getElementById("left");
+const disk=document.getElementById("disk");
+const confirmBtn=document.getElementById("confirm");
+
+function calc(){
+ let total=0;
+ cbs.forEach(c=>{if(c.checked)total+=Number(c.value)});
+ let free=Number(disk.value);
+ let rem=free-total;
+ used.innerText=total;
+ left.innerText=rem;
+ left.className=rem>=0?"green":"red";
+}
+cbs.forEach(c=>c.addEventListener("change",calc));
+disk.addEventListener("change",calc);
+calc();
+
+// Confirm button
+confirmBtn.addEventListener("click", ()=>{
+  let selectedGames=[];
+  cbs.forEach(c=>{
+    if(c.checked) selectedGames.push(c.parentNode.innerText.trim());
+  });
+  if(selectedGames.length===0){alert("Please select at least one game!"); return;}
+
+  let hddName=disk.options[disk.selectedIndex].dataset.name;
+
+  // Payment info based on HDD
+  let paymentText="";
+  switch(hddName){
+    case "160GB": paymentText="Advance: PKR 500"; break;
+    case "320GB": paymentText="Advance: PKR 500"; break;
+    case "500GB": paymentText="Advance: PKR 500, Rest COD"; break;
+    case "1TB": paymentText="Advance: PKR 3000"; break;
+    case "2TB": paymentText="Advance: PKR 5000"; break;
+  }
+
+  let text=`Pak E Store Order:\nHDD Selected: ${hddName}\n${paymentText}\n\nSelected Games:\n${selectedGames.join("\n")}\n\nTotal Size: ${used.innerText}GB\nRemaining HDD Space: ${left.innerText}GB`;
+
+  navigator.clipboard.writeText(text).then(()=>{
+    let number="923262281245";
+    let waLink="https://wa.me/"+number+"?text="+encodeURIComponent(text);
+    window.open(waLink,"_blank");
+  });
+});
+</script>
+
+</body>
+</html>
